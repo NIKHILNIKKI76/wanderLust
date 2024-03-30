@@ -1,4 +1,7 @@
 // index.js
+if(process.env.NODE_ENV != 'production'){
+  require('dotenv').config()
+}
 
 const mongoose = require("mongoose");
 const initData = require("./data.js");
@@ -7,7 +10,7 @@ const Review = require("../models/review.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderLust";
 
-const MONGO_ATLAS_URL = "mongodb+srv://Nikhil-86:nikhil%40mongoatlas86@cluster0.gixeygu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_ATLAS_URL = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
