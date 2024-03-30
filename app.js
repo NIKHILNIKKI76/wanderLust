@@ -111,6 +111,12 @@ app.use("/",userRouter);
 //------------------------------------------------------
 
 
+// about route 
+
+app.get("/about",(req,res)=>{
+    res.render("about.ejs")
+})
+
 // error handling
 
 app.all("*",(req,res,next) =>{
