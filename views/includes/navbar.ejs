@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="fa-regular fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link" href="/listings">Home</a>
+            <!-- <a class="nav-link" href="/listings">All Listings</a> -->
+            <a class="nav-link" href="/listings/new">Add new Place</a>
+        </div>
+        <form class="d-flex ms-auto" role="search">
+          <input class="form-control me-2 oval-button" type="search" placeholder="Find Your Bliss" aria-label="Search">
+          <button class="btn btn-outline-danger " type="submit"><i class="fa-solid fa-magnifying-glass" style="display: inline;"></i></button>
+        </form>
+          <div class="navbar-nav ms-auto">
+            <% if (!currentUser) { %>
+                <a class="nav-link btn btn-outline-light me-2" href="/signup">Sign Up</a>
+                <a class="nav-link btn btn-outline-light" href="/login">Login</a>
+            <% } else { %>
+                <span class="nav-link me-2">Welcome, <%= currentUser.username %></span>
+                <a class="nav-link btn btn-outline-light" href="/logout">Logout</a>
+            <% } %>
+        </div>
+        
+        
+        
+        
+      </div>
+  </div>
+</nav>
+
+
+

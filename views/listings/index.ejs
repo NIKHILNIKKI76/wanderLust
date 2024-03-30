@@ -1,0 +1,131 @@
+<% layout('/layouts/boilerplate') -%>
+  <!-- <form action="/listings/new" method="GET">
+    <button type="submit">Create New Listing</button>
+</form> -->
+<div id="filters" class="d-flex justify-content-center align-items-center">
+  <div class="filter text-center">
+    <div class="row">
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-fire"></i>
+          <div>Trending</div>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-mountain"></i>
+          <div>Mountain</div>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-mountain-city"></i>
+          <div>iconic</div>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <i class="fa-brands fa-fort-awesome"></i>
+          <div>Castle</div>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-person-swimming"></i>
+          <div>Pools</div>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-cow"></i>
+          <div>Farm</div>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-tower-observation"></i>
+          <div>Tower</div>
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-plane"></i>
+          <div>Plane</div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-train"></i>
+          <div>Train</div>
+        </div>
+      </div>
+      
+      <div class="col">
+        <div>
+          <i class="fa-solid fa-bicycle"></i>
+          <div>Cycling</div>
+        </div>
+      </div>
+      <div class="form-check form-switch col" id="tax-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Include GST</label>
+      </div>
+            
+    </div>
+  </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 mt-4">
+  <% for(let listing of allListings) { %>
+  <a href="/listings/<%= listing._id %>" class="listing-link">
+    <div class="col mb-4">
+      <div class="card h-100">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image">
+        <div class="card-body">
+          <h6 class="card-title">
+            <%= listing.title %>
+          </h6>
+          <p class="priceWithGST card-text" style="display: none;">₹<%= (listing.price * 1.18).toLocaleString('en-IN') %> (18% GST Added)</p>
+          <p class="priceWithoutGST card-text">₹<%= listing.price.toLocaleString('en-IN') %></p>
+        </div>
+      </div>
+    </div>
+  </a>
+  <% } %>
+</div>
+
+
+ 
+<script>
+   // this file is only for displaying gst or not--------NIKHIL CHARY------
+
+  // Get all elements with class "priceWithGST" and "priceWithoutGST"
+  const pricesWithGST = document.querySelectorAll('.priceWithGST');
+  const pricesWithoutGST = document.querySelectorAll('.priceWithoutGST');
+
+  // Get the tax switch element
+  const taxSwitch = document.getElementById('flexSwitchCheckDefault');
+
+  // Function to toggle display based on checkbox state
+  function togglePriceDisplay() {
+    // Loop through all elements with class "priceWithGST"
+    pricesWithGST.forEach(price => {
+      // Toggle display based on checkbox state
+      price.style.display = taxSwitch.checked ? 'block' : 'none';
+    });
+
+    // Loop through all elements with class "priceWithoutGST"
+    pricesWithoutGST.forEach(price => {
+      // Toggle display based on checkbox state
+      price.style.display = taxSwitch.checked ? 'none' : 'block';
+    });
+  }
+
+  // Add event listener to the tax switch for change event
+  taxSwitch.addEventListener('change', togglePriceDisplay);
+
+  // Call the function initially to set the initial price display
+  togglePriceDisplay();
+</script>

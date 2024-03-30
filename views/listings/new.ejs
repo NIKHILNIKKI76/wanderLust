@@ -1,0 +1,61 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+                <h4 class="text-center">Create a New Listing</h4>
+                <div class="form-group mb-3">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" class="form-control" name="listing[title]" placeholder="Title" required>
+                    <div class="invalid-feedback">
+                        Please provide a title for your listing.
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description">Description:</label>
+                    <textarea id="description" class="form-control" name="listing[description]" placeholder="Description" required></textarea>
+                    <div class="invalid-feedback">
+                        Description is required. Please provide a description.
+                    </div>
+                </div>
+               
+                <div class="form-group mb-3">
+                    <label for="image">Upload Image:</label>
+                    <input type="file" id="image" class="form-control" name="listing[image]" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Please Upload Image 
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="price">Price:</label>
+                            <input type="number" id="price" class="form-control" name="listing[price]" placeholder="Price" required>
+                            <div class="invalid-feedback">
+                                Price is required. Please enter a price for your listing.
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <label for="country">Country:</label>
+                            <input type="text" id="country" class="form-control" name="listing[country]" placeholder="Country" required>
+                            <div class="invalid-feedback">
+                                Country is required. Please enter the country where the listing is located.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" class="form-control" name="listing[location]" placeholder="Location" required>
+                    <div class="invalid-feedback">
+                        Location is required. Please enter the specific location of your listing.
+                    </div>
+                </div>
+                <div class="form-group mb-3 text-center">
+                    <button type="submit" class="btn btn-primary btn-dark">ADD</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

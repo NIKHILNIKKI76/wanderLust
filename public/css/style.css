@@ -1,0 +1,123 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+.navbar{
+    min-height:  5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 2 rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+
+.filter .col:hover {
+  cursor: pointer;
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.filter .col:hover i {
+  color: #ff4500; /* Change icon color on hover */
+}
+
+.filter .col:hover div {
+  color: #ff4500; /* Change text color on hover */
+}
+
+.oval-button {
+  border-radius: 20%; /* Makes the button oval */
+ 
+   /* width: 40px; 
+  height: 40px; 
+  padding: 8px;  */
+}
+
+
+/* footer */
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links , .f-info-socials, .f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+/* 
+cards */
+.card-img-top {
+    width: 100%; /* Ensure the image takes up the full width of its parent container */
+    height: 15rem; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the image covers the entire space allocated */
+    border-radius: 1rem;
+  }
+ 
+  .card {
+    border: none ;
+    transition: box-shadow 0.2s, transform 0.2s; /* Add transition effect with 0.5s duration */
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+    transform: translateY(-4px); /* Move the card slightly upwards */
+  }
+/* 
+anchor tags */
+.listing-link{
+    text-decoration: none ;
+}
+
+/* 
+editpage */
+.btn-primary {
+    background-color: #fe424d;
+    border-color: #fe424d;
+  }
+
+  .btn-primary:hover {
+    background-color: #f06e77;
+    border-color: #f06e77;
+  }
+
+
+  .form-control:focus {
+    border-color: #495057; /* Bootstrap's dark color */
+    box-shadow: none; /* Remove the box shadow */
+}
+
+@media (max-width: 576px) {
+ 
+}
